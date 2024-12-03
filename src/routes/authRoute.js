@@ -7,9 +7,7 @@ const user = require("../model/user")
 authRoute.post("/signup",async(req,res,next)=>{
     try{
     const userEmailId = req.body.emailId
-    console.log("userEmailId = ",userEmailId)
     const foundUserData = await user.findOne({emailId:userEmailId})
-    console.log("foundUserData = ",foundUserData)
     if(foundUserData){
         res.status(400).send("email id already exist in DB")
     }else{

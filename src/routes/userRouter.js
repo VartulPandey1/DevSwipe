@@ -67,7 +67,6 @@ userRouter.get("/user/feed", userAuth, async (req, res) => {
       notFeedUserSet.add(data.connectionRequestFrom._id);
     });
     const notFeedUserArray = [...notFeedUserSet];
-    console.log(notFeedUserArray);
     const data = await User.find({
       $and: [
         { _id: { $nin: notFeedUserArray } },
