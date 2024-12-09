@@ -33,13 +33,20 @@ userRouter.get("/user/connections", userAuth, async (req, res) => {
       })
       .populate(
         "connectionRequestTo",
-        "firstName lastName age photoURL skills gender about"
+        "firstName lastName age photoURL skills gender about emailId"
       )
       .populate(
         "connectionRequestFrom",
-        "firstName lastName age photoURL skills gender about"
+        "firstName lastName age photoURL skills gender about emailId"
       );
-    res.send(data);
+      
+      const segregateUser = new Set()
+      data.map((result)=>{
+        result.connectionRequestFrom.emailId == req.user.emailId?"":segregateUser.add(result.connectionRequestFrom)
+        result.connectionRequestTo.emailId == req.user.emailId?"":segregateUser.add(result.connectionRequestTo)
+      })
+      const userData = [...segregateUser]
+    res.send(userData);
   } catch (err) {
     res.send(err.message);
   }
