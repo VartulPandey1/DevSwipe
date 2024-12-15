@@ -26,7 +26,7 @@ profileRoute.put("/profile/edit",userAuth,async(req,res)=>{
     }
 })
 
-profileRoute.patch("/profile/password",userAuth,async(req,res)=>{
+profileRoute.put("/profile/password",userAuth,async(req,res)=>{
     try{
         const {currentPassword,newPassword}=req.body
         if(currentPassword===newPassword)
