@@ -33,6 +33,14 @@ profileRoute.put("/profile/password",userAuth,async(req,res)=>{
         {
             throw new Error("new and old password are same please enter a new password")
         }
+        if(newPassword == "")
+        {
+            throw new Error("Password can't be empty")
+        }
+        if(newPassword.length <4)
+        {
+            throw new Error("Password must have atleast 4 character")
+        }
         const user = req.user
         const isSamePassword = await bcrypt.compare(currentPassword, user.password)
         if(isSamePassword){
