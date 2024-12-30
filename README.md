@@ -14,12 +14,11 @@ A full-stack web application built with the MERN stack (MongoDB, Express.js, Rea
 
 ## Features
 
-- **Node.js**: The back-end is built using Node.js to handle API requests and server-side logic.
-- **Express.js**: Used as the web server framework to route API requests.
-- **MongoDB**: Database for storing user profiles, match data, and authentication details.
-- **JWT Authentication**: Implemented secure authentication using JSON Web Tokens for user registration and login.
-- **REST API**: Exposed a set of RESTful API endpoints to interact with the front-end.
-
+- **JWT Authentication**: Secure user login and registration using JSON Web Tokens.
+- **User Profiles**: Users can create, edit, and view profiles with basic details.
+- **Random Profile Viewing**: Users are shown random profiles they can either send connection requests to or reject.
+- **Connection Management**: Easily send and manage connection requests.
+- **Dynamic UI**: Interactive interface for browsing profiles and managing connections.
 
 
 ## Tech Stack
@@ -36,7 +35,7 @@ A full-stack web application built with the MERN stack (MongoDB, Express.js, Rea
 Clone the project
 
 ```bash
-  git clone https://github.com/VartulPandey1/DigitalThrifting.git
+  git clone https://github.com/VartulPandey1/DevSwipe-Backend.git
 ```
 
 Navigate to the project directory:
@@ -51,13 +50,13 @@ Install dependencies:
 
 Run the app:
 ```bash
-  node run start
+  nodemon run start
 ```
 
 
 ## Authors
 
-- [@VartulPandey](https://github.com/VartulPandey1/DigitalThrifting)
+- [@VartulPandey](https://github.com/VartulPandey1/DevSwipe-Backend)
 
 
 ## Acknowledgements
